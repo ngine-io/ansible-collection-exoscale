@@ -63,7 +63,7 @@ options:
     default: present
     choices: [ present, absent ]
     type: str
-extends_documentation_fragment: exoscale
+extends_documentation_fragment: ngine_io.exoscale.exoscale
 '''
 
 EXAMPLES = '''
