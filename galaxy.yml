@@ -1,0 +1,19 @@
+---
+authors:
+  - "René Moser <mail@renemoser.net>"
+dependencies: {}
+description: 'Ansible Collection for Exoscale'
+documentation: ''
+homepage: 'https://github.com/ngine-io/ansible-collection-exoscale'
+issues: 'https://github.com/ngine-io/ansible-collection-exoscale/issues'
+license: GPL-3.0-or-later
+name: exoscale
+namespace: ngine_io
+readme: README.md
+repository: 'https://github.com/ngine-io/ansible-collection-exoscale'
+tags:
+  - cloud
+  - dns
+  - exoscale
+  - ngine_io
+version: 0.1.0
