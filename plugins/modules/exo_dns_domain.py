@@ -15,7 +15,7 @@ short_description: Manages domain records on Exoscale DNS API.
 description:
     - Create and remove domain records.
 author: "René Moser (@resmo)"
-version_added: "1.0.0"
+version_added: "0.1.0"
 options:
   name:
     description:

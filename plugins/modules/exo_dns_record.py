@@ -15,7 +15,7 @@ short_description: Manages DNS records on Exoscale DNS.
 description:
     - Create, update and delete records.
 author: "René Moser (@resmo)"
-version_added: "1.0.0"
+version_added: "0.1.0"
 options:
   name:
     description:
