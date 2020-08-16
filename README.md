@@ -1,5 +1,4 @@
 ![Collection integration](https://github.com/ngine-io/ansible-collection-exoscale/workflows/Collection%20integration/badge.svg)
- [![Codecov](https://img.shields.io/codecov/c/github/ngine-io/ansible-collection-exoscale)](https://codecov.io/gh/ngine-io/ansible-collection-exoscale)
 [![License](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)](LICENSE)
 
 # Ansible Collection for exoscale Cloud
