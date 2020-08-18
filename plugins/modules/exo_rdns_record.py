@@ -8,18 +8,13 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
 
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
-
-
 DOCUMENTATION = '''
 ---
 module: exo_rdns_record
 short_description: Manages reverse DNS records for Exoscale compute instances.
 description:
     - Set and unset reverse DNS record on Exoscale instance.
-version_added: "2.10"
+version_added: "1.1.0"
 author: "Lorenz Schori (@znerol)"
 options:
   name:
@@ -38,17 +33,17 @@ options:
     default: present
     choices: [ 'present', 'absent' ]
     type: str
-extends_documentation_fragment: cloudstack
+extends_documentation_fragment: ngine_io.cloudstack.cloudstack
 '''
 
 EXAMPLES = '''
 - name: Set the reverse DNS for a virtual machine
-  local_action:
+  ngine_io.exoscale.exo_rdns_record:
     name: web-vm-1
     content: www.example.com
 
 - name: Delete the reverse DNS for a virtual machine
-  local_action:
+  ngine_io.exoscale.exo_rdns_record:
     name: web-vm-1
     state: absent
 '''
