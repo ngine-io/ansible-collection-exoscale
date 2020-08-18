@@ -58,7 +58,7 @@ exo_rdns_domain:
 
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils._text import to_bytes, to_text
-from ansible.module_utils.cloudstack import (
+from ansible_collections.ngine_io.cloudstack.plugins.module_utils.cloudstack import (
     AnsibleCloudStack,
     cs_argument_spec,
     cs_required_together
