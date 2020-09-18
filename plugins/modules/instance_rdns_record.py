@@ -83,9 +83,6 @@ class InstanceRdnsRecord(AnsibleCloudStack):
         instance = self.instance
         if not instance:
             args = {
-                'account': self.get_account(key='name'),
-                'domainid': self.get_domain(key='id'),
-                'projectid': self.get_project(key='id'),
                 'fetch_list': True,
             }
             # Do not pass zoneid, as the instance name must be unique across
