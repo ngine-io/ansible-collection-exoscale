@@ -10,7 +10,7 @@ __metaclass__ = type
 
 DOCUMENTATION = '''
 ---
-module: exo_rdns_record
+module: instance_rdns_record
 short_description: Manages reverse DNS records for Exoscale compute instances.
 description:
     - Set and unset reverse DNS record on Exoscale instance.
@@ -25,7 +25,7 @@ options:
   content:
     aliases: [ 'value' ]
     description:
-      - Reverse DSN name for the cs instance. Required if state=present.
+      - Reverse DSN name of the compute instance. Required if state=present.
     type: str
   state:
     description:
@@ -37,21 +37,21 @@ extends_documentation_fragment: ngine_io.cloudstack.cloudstack
 '''
 
 EXAMPLES = '''
-- name: Set the reverse DNS for a virtual machine
-  ngine_io.exoscale.exo_rdns_record:
+- name: Set the reverse DNS for a compute instance
+  ngine_io.exoscale.instance_rdns_record:
     name: web-vm-1
     content: www.example.com
 
-- name: Delete the reverse DNS for a virtual machine
-  ngine_io.exoscale.exo_rdns_record:
+- name: Delete the reverse DNS for a compute instance
+  ngine_io.exoscale.instance_rdns_record:
     name: web-vm-1
     state: absent
 '''
 
 RETURN = '''
 ---
-exo_rdns_domain:
-  description: Reverse DSN name for the cs instance
+instance_rdns_domain:
+  description: Reverse DSN name of the compute instance
   returned: success
   type: str
 '''
@@ -65,10 +65,10 @@ from ansible_collections.ngine_io.cloudstack.plugins.module_utils.cloudstack imp
 )
 
 
-class ExoRdnsRecord(AnsibleCloudStack):
+class InstanceRdnsRecord(AnsibleCloudStack):
 
     def __init__(self, module):
-        super(ExoRdnsRecord, self).__init__(module)
+        super(InstanceRdnsRecord, self).__init__(module)
 
         self.name = self.module.params.get('name')
         self.content = self.module.params.get('content')
@@ -125,7 +125,7 @@ class ExoRdnsRecord(AnsibleCloudStack):
 
         if not instance:
             self.module.fail_json(
-                msg="No virtual machine with name=%s found. " % self.name)
+                msg="No compute instance with name=%s found. " % self.name)
 
         data = {
             'domainname': self.content,
@@ -157,7 +157,7 @@ class ExoRdnsRecord(AnsibleCloudStack):
             return record
 
     def get_result(self, record):
-        self.result['exo_rdns_domain'] = record
+        self.result['instance_rdns_domain'] = record
         return self.result
 
 
@@ -178,13 +178,13 @@ def main():
         supports_check_mode=True,
     )
 
-    exo_rdns_record = ExoRdnsRecord(module)
+    instance_rdns_record = InstanceRdnsRecord(module)
     if module.params.get('state') == "present":
-        record = exo_rdns_record.present_record()
+        record = instance_rdns_record.present_record()
     else:
-        record = exo_rdns_record.absent_record()
+        record = instance_rdns_record.absent_record()
 
-    result = exo_rdns_record.get_result(record)
+    result = instance_rdns_record.get_result(record)
     module.exit_json(**result)
 
 
