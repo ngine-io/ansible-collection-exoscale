@@ -11,7 +11,7 @@ jobs:
       run:
         working-directory: ansible_collections/ngine_io/exoscale
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           path: ansible_collections/ngine_io/exoscale
       - name: Set up Python
