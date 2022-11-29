@@ -2,13 +2,14 @@
 # Copyright (c) 2016, René Moser <mail@renemoser.net>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 
 import os
 
-from ansible.module_utils.six.moves import configparser
-from ansible.module_utils.six import integer_types, string_types
 from ansible.module_utils._text import to_native, to_text
+from ansible.module_utils.six import integer_types, string_types
+from ansible.module_utils.six.moves import configparser
 from ansible.module_utils.urls import fetch_url
 
 EXO_DNS_BASEURL = "https://api.exoscale.ch/dns/v1"

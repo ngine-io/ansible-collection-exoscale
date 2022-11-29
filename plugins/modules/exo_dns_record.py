@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 
 
@@ -186,8 +187,9 @@ exo_dns_record:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ..module_utils.exoscale import ExoDns, exo_dns_argument_spec, exo_dns_required_together
 
+from ..module_utils.exoscale import (ExoDns, exo_dns_argument_spec,
+                                     exo_dns_required_together)
 
 EXO_RECORD_TYPES = [
     'A',
