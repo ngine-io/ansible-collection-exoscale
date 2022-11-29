@@ -153,8 +153,8 @@ class InstanceRdnsRecord(AnsibleCloudStack):
 
             return record
 
-    def get_result(self, record):
-        self.result['instance_rdns_domain'] = record
+    def get_result(self, resource):
+        self.result['instance_rdns_domain'] = resource
         return self.result
 
 

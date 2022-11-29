@@ -80,7 +80,7 @@ class ExoDns(object):
         # Look at CLOUDSTACK_CONFIG first if present
         if 'CLOUDSTACK_CONFIG' in os.environ:
             paths += (os.path.expanduser(os.environ['CLOUDSTACK_CONFIG']),)
-        if not any([os.path.exists(c) for c in paths]):
+        if not any([os.path.exists(c) for c in paths]):  # pylint: disable=use-a-generator
             self.module.fail_json(msg="Config file not found. Tried : %s" % ", ".join(paths))
 
         conf = configparser.ConfigParser()
