@@ -1,4 +1,4 @@
-![Collection integration](https://github.com/ngine-io/ansible-collection-exoscale/workflows/Collection%20integration/badge.svg)
+![Collection integration](https://github.com/ngine-io/ansible-collection-exoscale/workflows/Sanity/badge.svg)
 [![License](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)](LICENSE)
 
 # Ansible Collection for exoscale Cloud
