@@ -1,7 +1,7 @@
 name: Sanity
 on:
   schedule:
-  - cron: "5 12 * * *"
+    - cron: "5 12 * * *"
   pull_request:
 
 jobs:
@@ -14,26 +14,25 @@ jobs:
     strategy:
       matrix:
         ansible:
-        - stable-2.10
-        - stable-2.9
-        - devel
+          - stable-2.14
+          - stable-2.9
+          - devel
     steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          path: ansible_collections/ngine_io/exoscale
 
-    - name: Check out code
-      uses: actions/checkout@v2
-      with:
-        path: ansible_collections/ngine_io/exoscale
+      - name: Set up Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
 
-    - name: Set up Python 3
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+      - name: Install ansible-base (${{ matrix.ansible }})
+        run: pip install https://github.com/ansible/ansible/archive/${{ matrix.ansible }}.tar.gz --disable-pip-version-check
 
-    - name: Install ansible-base (${{ matrix.ansible }})
-      run: pip install https://github.com/ansible/ansible/archive/${{ matrix.ansible }}.tar.gz --disable-pip-version-check
+      - name: Install dependencies
+        run: ansible-galaxy collection install -p ../../ ngine_io.cloudstack
 
-    - name: Install dependencies
-      run: ansible-galaxy collection install -p ../../ ngine_io.cloudstack
-
-    - name: Run sanity tests
-      run: ansible-test sanity --docker -v --color
+      - name: Run sanity tests
+        run: ansible-test sanity --docker -v --color
