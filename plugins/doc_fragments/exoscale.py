@@ -4,6 +4,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 
 
@@ -38,7 +39,7 @@ options:
     description:
       - Validate SSL certs of the Exoscale DNS API.
     type: bool
-    default: yes
+    default: true
 requirements:
   - python >= 2.6
 notes:

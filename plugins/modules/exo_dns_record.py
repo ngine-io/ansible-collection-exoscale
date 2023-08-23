@@ -57,7 +57,7 @@ options:
       - Only allowed for a few record types, e.g. C(record_type=A), C(record_type=NS) or C(record_type=MX).
       - I(content) will not be updated, instead it is used as a key to find existing records.
     type: bool
-    default: no
+    default: false
   state:
     description:
       - State of the record.
