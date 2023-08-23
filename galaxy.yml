@@ -2,7 +2,7 @@
 authors:
   - "René Moser <mail@renemoser.net>"
 dependencies:
-  - ngine_io.cloudstack: ">=1.0.0"
+  ngine_io.cloudstack: ">=1.0.0"
 description: "Ansible Collection for Exoscale"
 documentation: ""
 homepage: "https://github.com/ngine-io/ansible-collection-exoscale"
