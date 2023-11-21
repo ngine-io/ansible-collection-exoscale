@@ -1,6 +1,9 @@
 ![Collection integration](https://github.com/ngine-io/ansible-collection-exoscale/workflows/Sanity/badge.svg)
 [![License](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)](LICENSE)
 
+:warning: **DEPRECATED:** Exoscale will no longer support the Cloudstack API after May 1, 2024.
+[See Announcement](https://changelog.exoscale.com/en/deprecation-api-v1-as-of-may-1st-2024-uVYHUVZ3).
+
 # Ansible Collection for exoscale Cloud
 
 This collection provides a series of Ansible modules and plugins for interacting with the [exoscale](https://www.exoscale.com) Cloud.
